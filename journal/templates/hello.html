@@ -1,7 +1,12 @@
 {% extends "index.html" %}
+{% load socialaccount %}
 
 {% block content %}
 <h1>Hello World!</h1>
 
-Your name is {{ name }}!
+{% if user.is_authenticated %}
+Your name is {{ user.username }}!
+{% else %}
+Please login.
+{% endif %}
 {% endblock %}
