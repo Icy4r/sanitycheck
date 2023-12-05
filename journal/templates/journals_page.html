@@ -11,9 +11,15 @@
     <!-- interaction content -->
     {% block interactions %}
         {% for inter in interactions %}
-        <h1> {{inter.title}} </h1>
-        {{ inter.conversations }}<br>
-        {{ inter.time }}
+        <div class="col-xs-1" align="center">
+            <div class="card" style="width: 26rem;" align="center">
+                <div class="card-body">
+                <h5 class="card-title">{{ inter.title }}</h5>
+                <p class="card-text">{{ inter.conversations }}</p>
+                <p class="card-text">{{ inter.time }}</p>
+                </div>
+            </div>
+        </div>
         {% endfor %}
     {% endblock interactions%}
 

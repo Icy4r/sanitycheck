@@ -26,7 +26,8 @@ def input_interactions(request):
             print('yee')
             title = form.cleaned_data['your_title']
             conversation = form.cleaned_data['your_convo']
-            i = Interaction(title=title, conversations=conversation)
+            date = form.cleaned_data['your_date']
+            i = Interaction(title=title, conversations=conversation, time=date)
             i.save()
 
             return HttpResponseRedirect("/journal/")
