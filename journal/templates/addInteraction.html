@@ -2,9 +2,37 @@
 {% load socialaccount %}
 
 {% block content %}
-<form action="/journal/add/" method="post">
-    {% csrf_token %}
-    {{ form.as_ul }}
-    <input type="submit" value="Submit">
-</form>
+
+<div class="container mt-4">
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="{{ form.your_title.id_for_label }}">Title:</label>
+                    <input type="text" class="form-control" id="{{ form.your_title.id_for_label }}" name="{{ form.your_title.name }}" value="{{ form.your_title.value }}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="{{ form.your_date.id_for_label }}">Date:</label>
+                    <input type="date" class="form-control" id="{{ form.your_date.id_for_label }}" name="{{ form.your_date.name }}" value="{{ form.your_date.value }}">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{ form.your_convo.id_for_label }}">Conversation:</label>
+            <textarea class="form-control" id="{{ form.your_convo.id_for_label }}" name="{{ form.your_convo.name }}">{{ form.your_convo.value }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+    
+    
+    
+<!-- </form> -->
+    
+    
+<!-- </form> -->
+
 {% endblock content%}

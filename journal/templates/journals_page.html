@@ -2,7 +2,7 @@
 {% load socialaccount %}
 
 {% block content %}
-
+<div class="container mt-4">
     <!-- add an interaction -->
     {% block addpost %}
     <a href="/journal/add/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add an Entry</a>
@@ -22,5 +22,5 @@
         </div>
         {% endfor %}
     {% endblock interactions%}
-
+</div>
 {% endblock content%}
