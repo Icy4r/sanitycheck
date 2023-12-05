@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% load socialaccount %}
+
+{% block content %}
+
+    <!-- add an interaction -->
+    {% block addpost %}
+    <a href="/journal/add/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add an Entry</a>
+    {% endblock addpost%}
+
+    <!-- interaction content -->
+    {% block interactions %}
+        {% for inter in interactions %}
+        <h1> {{inter.title}} </h1>
+        {{ inter.conversations }}<br>
+        {{ inter.time }}
+        {% endfor %}
+    {% endblock interactions%}
+
+{% endblock content%}
